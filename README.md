@@ -1,17 +1,7 @@
 node-rpio
 =========
 
-This is a high performance node.js addon which provides access to the Raspberry
-Pi and SunXi (Allwinner V40) GPIO interfaces, supporting regular GPIO as well
-as i²c, PWM, and SPI.
-
-[![NPM version](https://img.shields.io/npm/v/rpio.svg)](https://www.npmjs.com/package/rpio)
-[![Node.js version](https://img.shields.io/node/v/rpio.svg)](http://nodejs.org/download/)
-[![NPM downloads](https://img.shields.io/npm/dw/rpio.svg)](https://www.npmjs.com/package/rpio)
-[![Build Status](https://travis-ci.org/jperkin/node-rpio.svg?branch=master)](https://travis-ci.org/jperkin/node-rpio)
-[![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](https://opensource.org/licenses/ISC)
-[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-yellow.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
-[![Donations](https://img.shields.io/liberapay/receives/jperkin.svg)](https://liberapay.com/jperkin/)
+This is a fork of https://github.com/jperkin/node-rpio, the api is currently the same, but it may quickly diverge
 
 ## Compatibility
 
@@ -33,7 +23,13 @@ above.
 Install the latest using npm:
 
 ```console
-$ npm install rpio
+$ npm install git@github.com:wizebin/node-rpio.git
+```
+
+or
+
+```console
+$ npm install https://github.com/wizebin/node-rpio.git
 ```
 
 ## Important System Requirements
