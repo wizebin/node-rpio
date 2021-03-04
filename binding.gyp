@@ -11,8 +11,8 @@
           "sources": [
             "src/bcm2835.c",
             "src/sunxi.c"
-	  ]
-	}]
+	        ]
+	      }]
       ]
     }
   ]

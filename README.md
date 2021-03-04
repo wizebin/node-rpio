@@ -198,7 +198,20 @@ performance to match.
 Start by requiring the addon.
 
 ```js
-var rpio = require('rpio');
+var rpio = require('rpio').default;
+```
+
+or
+
+```js
+import rpio from 'rpio';
+```
+
+You may also create multiple instances via the named export, like so
+
+```js
+import { rpio } from 'rpio';
+const instance = new rpio();
 ```
 
 ### GPIO
@@ -296,19 +309,32 @@ creating their own `warn` handler.
 The user can also explicitly request mock mode, where the argument is the type
 of hardware they wish to emulate.  The currently available options are:
 
-* 26-pin Raspberry Pi models
-    * `raspi-b-r1` (early rev 1 model)
-    * `raspi-a`
-    * `raspi-b`
-* 40-pin Raspberry Pi models
-    * `raspi-a+`
-    * `raspi-b+`
-    * `raspi-2`
-    * `raspi-3`
-    * `raspi-zero`
-    * `raspi-zero-w` (zero with wireless)
+  * `raspi-b-r1 `
+  * `raspi-a `
+  * `raspi-b `
+  * `raspi-a+ `
+  * `raspi-b+ `
+  * `raspi-2 `
+  * `raspi-3 `
+  * `raspi-4 `
+  * `raspi-400 `
+  * `raspi-zero `
+  * `raspi-zero-w `
+  * `cm' `
+  * `cm1' `
+  * `cm3' `
+  * `cm3-lite `
+  * `compute-module `
+  * `compute-module-3 `
+  * `compute-module-3-lite `
+  * `cm4' `
+  * `compute-module-4 `
+  * `orangepi-zero `
+  * `bananapi-m2-berry `
+  * `bananapi-m2-ultra `
+  * `bananapi-m2-zero `
 
-The default unsupported hardware emulation is `raspi-3`.
+The default hardware emulation is `raspi-3`.
 
 Examples:
 
@@ -318,7 +344,7 @@ Examples:
  * unsupported hardware, or to test scripts in a different hardware
  * environment (e.g. to check pin settings).
  */
-rpio.init({mock: 'raspi-3'});
+rpio.init({ mock: 'raspi-3' });
 
 /* Override default warn handler to avoid mock warnings */
 rpio.on('warn', function() {});
@@ -796,7 +822,7 @@ To enable a PIN for PWM, use the `rpio.PWM` argument to `open()`:
 rpio.open(12, rpio.PWM); /* Use pin 12 */
 ```
 
-Set the PWM refresh rate with `pwmSetClockDivider()`.  This is a power-of-two
+Set the PWM refresh rate with `pwmSetClockDivider()`.  This is a
 divisor of the base 19.2MHz rate, with a maximum value of 4096 (4.6875kHz).
 
 ```js

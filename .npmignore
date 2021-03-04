@@ -3,3 +3,10 @@
 build
 node_modules
 npm-debug.log
+lib
+test
+webpack.config.js
+package-lock.json
+.travis.yml
+build_help
+examples

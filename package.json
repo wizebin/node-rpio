@@ -3,20 +3,30 @@
   "version": "2.4.2",
   "description": "High performance GPIO/i2c/PWM/SPI module for Raspberry Pi, Orange Pi, Banana Pi",
   "homepage": "https://www.npmjs.com/package/rpio",
-  "main": "./lib/rpio.js",
+  "main": "./dist/bundle.js",
   "scripts": {
     "install": "node-gyp rebuild",
     "lint": "eslint test/*.js",
-    "node-lt8": "node -e 'process.exit(process.version[1] < 8 ? 0 : 1)'",
-    "test": "npm run --silent node-lt8 || tap"
+    "build-native": "node-gyp rebuild",
+    "build-js": "webpack",
+    "build": "run-p build-js build-native",
+    "test": "jest"
   },
   "dependencies": {
     "bindings": "~1.5.0",
     "nan": "^2.14.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.13.8",
+    "@babel/plugin-transform-runtime": "^7.13.9",
+    "@babel/preset-env": "^7.13.9",
+    "babel-loader": "^8.2.2",
     "eslint": "~6.5.0",
-    "tap": "^13.0.0"
+    "jest": "^26.6.3",
+    "npm-run-all": "^4.1.5",
+    "webpack-cli": "^4.5.0"
   },
   "engines": {
     "node": ">=0.8"
